@@ -1,20 +1,18 @@
 //
-//  ViewController.swift
+//  UsersViewController.swift
 //  GithubUsers
 //
-//  Created by Anh Tuan on 7/2/19.
+//  Created by Anh Tuan on 7/3/19.
 //  Copyright © 2019 tuan.nva. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+final class UsersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
-
 }
-

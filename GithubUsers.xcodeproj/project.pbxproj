@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3683065622CBBDCD001AF15B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683065522CBBDCD001AF15B /* AppDelegate.swift */; };
-		3683065822CBBDCD001AF15B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683065722CBBDCD001AF15B /* ViewController.swift */; };
 		3683065B22CBBDCD001AF15B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3683065922CBBDCD001AF15B /* Main.storyboard */; };
 		3683065D22CBBDCF001AF15B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3683065C22CBBDCF001AF15B /* Assets.xcassets */; };
 		3683066022CBBDCF001AF15B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3683065E22CBBDCF001AF15B /* LaunchScreen.storyboard */; };
 		3683066B22CBBDCF001AF15B /* GithubUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683066A22CBBDCF001AF15B /* GithubUsersTests.swift */; };
+		3683067822CBC1B2001AF15B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683067722CBC1B2001AF15B /* Network.swift */; };
+		3683067B22CBC244001AF15B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683067A22CBC244001AF15B /* Log.swift */; };
+		36DE346622CBC4FF0091DDBD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE346522CBC4FF0091DDBD /* APIManager.swift */; };
+		36DE346A22CBC56C0091DDBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE346922CBC56C0091DDBD /* Constants.swift */; };
+		36DE346E22CBC6F30091DDBD /* APIManager+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE346D22CBC6F30091DDBD /* APIManager+Users.swift */; };
+		36DE347222CBC7D30091DDBD /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE347122CBC7D30091DDBD /* UsersViewController.swift */; };
 		8C85F31C87DC433132435540 /* Pods_GithubUsers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7831D936B509FEB1C1E29A41 /* Pods_GithubUsers.framework */; };
 		C63C68AA04591854A74CD6E4 /* Pods_GithubUsersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B06C84D214389D82BC3B21 /* Pods_GithubUsersTests.framework */; };
 /* End PBXBuildFile section */
@@ -31,7 +36,6 @@
 		2B4D8E079099D4DD6300F770 /* Pods-GithubUsersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubUsersTests.release.xcconfig"; path = "Target Support Files/Pods-GithubUsersTests/Pods-GithubUsersTests.release.xcconfig"; sourceTree = "<group>"; };
 		3683065222CBBDCD001AF15B /* GithubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3683065522CBBDCD001AF15B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3683065722CBBDCD001AF15B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3683065A22CBBDCD001AF15B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3683065C22CBBDCF001AF15B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3683065F22CBBDCF001AF15B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +43,12 @@
 		3683066622CBBDCF001AF15B /* GithubUsersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubUsersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3683066A22CBBDCF001AF15B /* GithubUsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUsersTests.swift; sourceTree = "<group>"; };
 		3683066C22CBBDCF001AF15B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3683067722CBC1B2001AF15B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		3683067A22CBC244001AF15B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		36DE346522CBC4FF0091DDBD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		36DE346922CBC56C0091DDBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		36DE346D22CBC6F30091DDBD /* APIManager+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Users.swift"; sourceTree = "<group>"; };
+		36DE347122CBC7D30091DDBD /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		3B1637C7E3B71C38B9359FA1 /* Pods-GithubUsersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubUsersTests.debug.xcconfig"; path = "Target Support Files/Pods-GithubUsersTests/Pods-GithubUsersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69B06C84D214389D82BC3B21 /* Pods_GithubUsersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubUsersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7831D936B509FEB1C1E29A41 /* Pods_GithubUsers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubUsers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,12 +99,11 @@
 		3683065422CBBDCD001AF15B /* GithubUsers */ = {
 			isa = PBXGroup;
 			children = (
-				3683065522CBBDCD001AF15B /* AppDelegate.swift */,
-				3683065722CBBDCD001AF15B /* ViewController.swift */,
-				3683065922CBBDCD001AF15B /* Main.storyboard */,
-				3683065C22CBBDCF001AF15B /* Assets.xcassets */,
-				3683065E22CBBDCF001AF15B /* LaunchScreen.storyboard */,
-				3683066122CBBDCF001AF15B /* Info.plist */,
+				3683067522CBC073001AF15B /* Application */,
+				3683067622CBC0B3001AF15B /* Libraries */,
+				36DE346422CBC4ED0091DDBD /* Manager */,
+				36DE346F22CBC7AC0091DDBD /* Screens */,
+				36DE346722CBC5440091DDBD /* Resources */,
 			);
 			path = GithubUsers;
 			sourceTree = "<group>";
@@ -106,6 +115,100 @@
 				3683066C22CBBDCF001AF15B /* Info.plist */,
 			);
 			path = GithubUsersTests;
+			sourceTree = "<group>";
+		};
+		3683067522CBC073001AF15B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3683065522CBBDCD001AF15B /* AppDelegate.swift */,
+				3683066122CBBDCF001AF15B /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		3683067622CBC0B3001AF15B /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				3683067C22CBC24C001AF15B /* Network */,
+				3683067922CBC239001AF15B /* Log */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		3683067922CBC239001AF15B /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				3683067A22CBC244001AF15B /* Log.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		3683067C22CBC24C001AF15B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3683067722CBC1B2001AF15B /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		36DE346422CBC4ED0091DDBD /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				36DE346522CBC4FF0091DDBD /* APIManager.swift */,
+				36DE346D22CBC6F30091DDBD /* APIManager+Users.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		36DE346722CBC5440091DDBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36DE346C22CBC5890091DDBD /* Images */,
+				36DE346B22CBC5770091DDBD /* Storyboards */,
+				36DE346822CBC5570091DDBD /* Constants */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		36DE346822CBC5570091DDBD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				36DE346922CBC56C0091DDBD /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		36DE346B22CBC5770091DDBD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3683065922CBBDCD001AF15B /* Main.storyboard */,
+				3683065E22CBBDCF001AF15B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		36DE346C22CBC5890091DDBD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3683065C22CBBDCF001AF15B /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		36DE346F22CBC7AC0091DDBD /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				36DE347022CBC7BA0091DDBD /* Users */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		36DE347022CBC7BA0091DDBD /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				36DE347122CBC7D30091DDBD /* UsersViewController.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		385A36D7422542401E4C7738 /* Frameworks */ = {
@@ -139,6 +242,7 @@
 				3683064E22CBBDCD001AF15B /* Sources */,
 				3683064F22CBBDCD001AF15B /* Frameworks */,
 				3683065022CBBDCD001AF15B /* Resources */,
+				D2E494EB5363F01E586DFD0A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,6 +375,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D2E494EB5363F01E586DFD0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GithubUsers/Pods-GithubUsers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GithubUsers/Pods-GithubUsers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GithubUsers/Pods-GithubUsers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -278,8 +399,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3683065822CBBDCD001AF15B /* ViewController.swift in Sources */,
+				36DE346622CBC4FF0091DDBD /* APIManager.swift in Sources */,
 				3683065622CBBDCD001AF15B /* AppDelegate.swift in Sources */,
+				3683067B22CBC244001AF15B /* Log.swift in Sources */,
+				36DE347222CBC7D30091DDBD /* UsersViewController.swift in Sources */,
+				36DE346E22CBC6F30091DDBD /* APIManager+Users.swift in Sources */,
+				36DE346A22CBC56C0091DDBD /* Constants.swift in Sources */,
+				3683067822CBC1B2001AF15B /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +569,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GithubUsers/Info.plist;
+				INFOPLIST_FILE = GithubUsers/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -462,7 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GithubUsers/Info.plist;
+				INFOPLIST_FILE = GithubUsers/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

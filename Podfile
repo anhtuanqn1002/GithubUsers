@@ -6,7 +6,9 @@ target 'GithubUsers' do
   use_frameworks!
 
   # Pods for GithubUsers
-  
+  pod 'Alamofire'
+  pod 'MBProgressHUD'
+  pod 'SwiftyJSON'
 
   target 'GithubUsersTests' do
     inherit! :search_paths
