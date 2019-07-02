@@ -9,6 +9,7 @@ target 'GithubUsers' do
   pod 'Alamofire'
   pod 'MBProgressHUD'
   pod 'SwiftyJSON'
+  pod 'Kingfisher'
 
   target 'GithubUsersTests' do
     inherit! :search_paths
