@@ -10,6 +10,8 @@ import Foundation
 
 final class UsersViewModel {
     
+    let isLoading: Variable<Bool> = Variable(false)
+    
     var title: String {
         return "User List"
     }
@@ -23,7 +25,9 @@ final class UsersViewModel {
 
 extension UsersViewModel {
     func getData(completion: (() -> Void)? = nil) {
+        isLoading.value = true
         APIManager.Users.getUsers { (response) in
+            defer { self.isLoading.value = false } 
             switch response {
             case .failure(let error):
                 Log(error)

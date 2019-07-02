@@ -19,7 +19,6 @@ class User: RealmObject {
 // MARK: - UpdateFromJSON
 extension User: UpdateFromJSON {
     func update(json: JSON) {
-        id = "\(json["id"].intValue)"
         login = json["login"].stringValue
         avatarURL = json["avatar_url"].stringValue
         htmlURL = json["html_url"].stringValue

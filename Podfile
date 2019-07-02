@@ -11,6 +11,7 @@ target 'GithubUsers' do
   pod 'SwiftyJSON', '5.0.0'
   pod 'Kingfisher', '5.6.0'
   pod 'RealmSwift', '3.16.2'
+  pod 'SVPullToRefresh', '0.4.1'
 
   target 'GithubUsersTests' do
     inherit! :search_paths

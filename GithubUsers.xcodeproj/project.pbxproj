@@ -31,6 +31,7 @@
 		36DE348D22CBD8900091DDBD /* RealmUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE348C22CBD8900091DDBD /* RealmUtils.swift */; };
 		36DE348F22CBD8D50091DDBD /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE348E22CBD8D50091DDBD /* RealmExtensions.swift */; };
 		36DE349122CBD9010091DDBD /* UpdateFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE349022CBD9010091DDBD /* UpdateFromJson.swift */; };
+		36DE349422CBE0320091DDBD /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE349322CBE0320091DDBD /* Variable.swift */; };
 		8C85F31C87DC433132435540 /* Pods_GithubUsers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7831D936B509FEB1C1E29A41 /* Pods_GithubUsers.framework */; };
 		C63C68AA04591854A74CD6E4 /* Pods_GithubUsersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B06C84D214389D82BC3B21 /* Pods_GithubUsersTests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		36DE348C22CBD8900091DDBD /* RealmUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtils.swift; sourceTree = "<group>"; };
 		36DE348E22CBD8D50091DDBD /* RealmExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtensions.swift; sourceTree = "<group>"; };
 		36DE349022CBD9010091DDBD /* UpdateFromJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFromJson.swift; sourceTree = "<group>"; };
+		36DE349322CBE0320091DDBD /* Variable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variable.swift; sourceTree = "<group>"; };
 		3B1637C7E3B71C38B9359FA1 /* Pods-GithubUsersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubUsersTests.debug.xcconfig"; path = "Target Support Files/Pods-GithubUsersTests/Pods-GithubUsersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69B06C84D214389D82BC3B21 /* Pods_GithubUsersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubUsersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7831D936B509FEB1C1E29A41 /* Pods_GithubUsers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubUsers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +266,7 @@
 		36DE347F22CBCC190091DDBD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				36DE349222CBE0240091DDBD /* Utils */,
 				36DE348722CBD0B40091DDBD /* Protocols */,
 				36DE348022CBCC300091DDBD /* Extensions */,
 			);
@@ -288,6 +291,14 @@
 				36DE349022CBD9010091DDBD /* UpdateFromJson.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		36DE349222CBE0240091DDBD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				36DE349322CBE0320091DDBD /* Variable.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		385A36D7422542401E4C7738 /* Frameworks */ = {
@@ -490,6 +501,7 @@
 				36DE346E22CBC6F30091DDBD /* APIManager+Users.swift in Sources */,
 				36DE348B22CBD8500091DDBD /* RealmObject.swift in Sources */,
 				36DE348F22CBD8D50091DDBD /* RealmExtensions.swift in Sources */,
+				36DE349422CBE0320091DDBD /* Variable.swift in Sources */,
 				36DE347422CBC9E80091DDBD /* UsersViewModel.swift in Sources */,
 				36DE346A22CBC56C0091DDBD /* Constants.swift in Sources */,
 				36DE347822CBCA700091DDBD /* UsersTableViewCell.swift in Sources */,

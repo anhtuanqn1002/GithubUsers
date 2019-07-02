@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MBProgressHUD
+import SVPullToRefresh
 
 final class UsersViewController: UIViewController {
 
@@ -18,7 +20,9 @@ final class UsersViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        setupPullToRefresh()
         getData()
+        bindData()
     }
 }
 
@@ -35,6 +39,25 @@ private extension UsersViewController {
     
     func setupTableView() {
         tableView.register(UINib(nibName: UsersTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: UsersTableViewCell.reuseIdentifier)
+    }
+    
+    func bindData() {
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self else { return }
+            if isLoading {
+                MBProgressHUD.showAdded(to: self.view, animated: true)
+            } else {
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.tableView.pullToRefreshView.stopAnimating()
+            }
+        }
+    }
+    
+    func setupPullToRefresh() {
+        tableView.addPullToRefresh { [weak self] in
+            guard let self = self else { return }
+            self.getData()
+        }
     }
     
     func getData() {
