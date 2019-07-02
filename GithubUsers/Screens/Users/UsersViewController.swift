@@ -25,7 +25,12 @@ final class UsersViewController: UIViewController {
 // MARK: - Private
 private extension UsersViewController {
     func setupUI() {
+        setupNavigationBar()
         setupTableView()
+    }
+    
+    func setupNavigationBar() {
+        title = viewModel.title
     }
     
     func setupTableView() {

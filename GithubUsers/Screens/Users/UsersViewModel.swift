@@ -10,6 +10,10 @@ import Foundation
 
 final class UsersViewModel {
     
+    var title: String {
+        return "User List"
+    }
+    
     var numberOfCell: Int {
         return cellViewModels.count
     }

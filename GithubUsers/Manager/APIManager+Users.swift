@@ -18,12 +18,15 @@ extension APIManager {
             APIManager.request(method: .get, url: url, params: [:]) { (response) in
                 switch response.result {
                 case .failure(let error):
-                    completion(.failure(error))
+                    if error.code == -1009 {
+                        completion(.success(User.all))
+                    } else {
+                        completion(.failure(error))
+                    }
                 case .success(let json):
                     let users: [User] = json.arrayValue.compactMap {
-//                        guard let id = JWTip.createOrUpdate(json: $0) else { return nil }
-//                        return JWTip.find(id: id)
-                        return User(json: $0)
+                        guard let id = User.createOrUpdate(json: $0) else { return nil }
+                        return User.find(id: id)
                     }
                     completion(.success(users))
                 }

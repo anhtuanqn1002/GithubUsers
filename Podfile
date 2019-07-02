@@ -6,10 +6,11 @@ target 'GithubUsers' do
   use_frameworks!
 
   # Pods for GithubUsers
-  pod 'Alamofire'
-  pod 'MBProgressHUD'
-  pod 'SwiftyJSON'
-  pod 'Kingfisher'
+  pod 'Alamofire', '4.8.2'
+  pod 'MBProgressHUD', '1.1.0'
+  pod 'SwiftyJSON', '5.0.0'
+  pod 'Kingfisher', '5.6.0'
+  pod 'RealmSwift', '3.16.2'
 
   target 'GithubUsersTests' do
     inherit! :search_paths
