@@ -35,12 +35,7 @@ final class DetailsViewController: UIViewController {
 // MARK: - Private
 private extension DetailsViewController {
     func setupUI() {
-        setupNavigationBar()
         setupPullToRefresh()
-    }
-    
-    func setupNavigationBar() {
-        title = viewModel.title
     }
     
     func setupPullToRefresh() {
@@ -60,23 +55,50 @@ private extension DetailsViewController {
                 self.scrollView.pullToRefreshView.stopAnimating()
             }
         }
-    }
-    
-    func getData() {
-        viewModel.getUserDetails { [weak self] in
+        
+        viewModel.title.bindAndFire { [weak self] title in
             guard let self = self else { return }
-            self.updateUI()
+            self.title = title
+        }
+        
+        viewModel.avatarString.bindAndFire { [weak self] avatar in
+            guard let self = self else { return }
+            self.avatarImageView.load(avatar)
+        }
+        
+        viewModel.username.bindAndFire { [weak self] username in
+            guard let self = self else { return }
+            self.usernameLabel.text = username
+        }
+        
+        viewModel.location.bindAndFire { [weak self] location in
+            guard let self = self else { return }
+            self.locationLabel.text = location
+        }
+        
+        viewModel.bio.bindAndFire { [weak self] bio in
+            guard let self = self else { return }
+            self.bioLabel.text = bio
+        }
+        
+        viewModel.publicRepo.bindAndFire { [weak self] publicRepo in
+            guard let self = self else { return }
+            self.publicRepoNumberLabel.text = publicRepo
+        }
+        
+        viewModel.followers.bindAndFire { [weak self] followers in
+            guard let self = self else { return }
+            self.followersNumberLabel.text = followers
+        }
+        
+        viewModel.following.bindAndFire { [weak self] following in
+            guard let self = self else { return }
+            self.followingNumberLabel.text = following
         }
     }
     
-    func updateUI() {
-        avatarImageView.load(viewModel.avatarString)
-        usernameLabel.text = viewModel.username
-        locationLabel.text = viewModel.location
-        bioLabel.text = viewModel.bio
-        publicRepoNumberLabel.text = viewModel.publicRepo
-        followersNumberLabel.text = viewModel.followers
-        followingNumberLabel.text = viewModel.following
+    func getData() {
+        viewModel.getUserDetails()
     }
 }
 

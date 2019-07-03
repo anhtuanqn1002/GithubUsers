@@ -14,37 +14,14 @@ final class DetailsViewModel {
     
     private var user: User!
 
-    var title: String {
-        return "User profile"
-    }
-    
-    var avatarString: String {
-        return user.avatarURL
-    }
-    
-    var username: String {
-        return user.username
-    }
-    
-    var location: String? {
-        return user.location
-    }
-    
-    var bio: String? {
-        return user.bio
-    }
-    
-    var publicRepo: String {
-        return "\(user.publicRepo)"
-    }
-    
-    var followers: String {
-        return "\(user.followers)"
-    }
-    
-    var following: String {
-        return "\(user.following)"
-    }
+    let title = Variable("Profile")
+    let avatarString = Variable("")
+    let username = Variable("")
+    let location: Variable<String?> = Variable(nil)
+    let bio: Variable<String?> = Variable(nil)
+    let publicRepo = Variable("")
+    let followers = Variable("")
+    let following = Variable("")
     
     private let apiManager: APIUser
 
@@ -58,7 +35,8 @@ final class DetailsViewModel {
 extension DetailsViewModel {
     func getUserDetails(completion: (() -> Void)? = nil) {
         isLoading.value = true
-        apiManager.getUserDetails(id: user.id) { (response) in
+        apiManager.getUserDetails(id: user.id) { [weak self] (response) in
+            guard let self = self else { return }
             defer { self.isLoading.value = false }
             switch response {
             case .failure(let error):
@@ -66,8 +44,19 @@ extension DetailsViewModel {
                 completion?()
             case .success(let user):
                 self.user = user
+                self.updateData()
                 completion?()
             }
         }
+    }
+    
+    private func updateData() {
+        avatarString.value = user.avatarURL
+        username.value = user.username
+        location.value = user.location
+        bio.value = user.bio
+        publicRepo.value = "\(user.publicRepo)"
+        followers.value = "\(user.followers)"
+        following.value = "\(user.following)"
     }
 }
