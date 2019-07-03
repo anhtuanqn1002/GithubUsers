@@ -9,11 +9,14 @@
 import Foundation
 import SwiftyJSON
 
+protocol APIUser {
+    func getUsers(completion: @escaping (Swift.Result<[User], NSError>) -> Void)
+    func getUserDetails(id: String, completion: @escaping (Swift.Result<User, NSError>) -> Void)
+}
+
 extension APIManager {
-    struct Users {
-        private init() {}
-        
-        static func getUsers(completion: @escaping (Swift.Result<[User], NSError>) -> Void) {
+    struct Users: APIUser {        
+        func getUsers(completion: @escaping (Swift.Result<[User], NSError>) -> Void) {
             let url = APIManager.endpoint(path: Constants.StringURL.user)
             APIManager.request(method: .get, url: url, params: [:]) { (response) in
                 switch response.result {
@@ -33,7 +36,7 @@ extension APIManager {
             }
         }
         
-        static func getUserDetails(id: String, completion: @escaping (Swift.Result<User, NSError>) -> Void) {
+        func getUserDetails(id: String, completion: @escaping (Swift.Result<User, NSError>) -> Void) {
             let path = String(format: Constants.StringURL.details, id)
             let url = APIManager.endpoint(path: path)
             APIManager.request(method: .get, url: url, params: [:]) { (response) in

@@ -22,12 +22,18 @@ final class UsersViewModel {
     
     private var users: [User] = []
     private var cellViewModels: [UsersCellViewModel] = []
+    
+    private let apiManager: APIUser
+    
+    init(apiManager: APIUser = APIManager.Users()) {
+        self.apiManager = apiManager
+    }
 }
 
 extension UsersViewModel {
     func getData(completion: (() -> Void)? = nil) {
         isLoading.value = true
-        APIManager.Users.getUsers { (response) in
+        apiManager.getUsers { (response) in
             defer { self.isLoading.value = false } 
             switch response {
             case .failure(let error):

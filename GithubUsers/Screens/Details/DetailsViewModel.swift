@@ -46,8 +46,11 @@ final class DetailsViewModel {
         return "\(user.following)"
     }
     
-    init(user: User) {
+    private let apiManager: APIUser
+
+    init(user: User, apiManager: APIUser = APIManager.Users()) {
         self.user = user
+        self.apiManager = apiManager
     }
 }
 
@@ -55,7 +58,7 @@ final class DetailsViewModel {
 extension DetailsViewModel {
     func getUserDetails(completion: (() -> Void)? = nil) {
         isLoading.value = true
-        APIManager.Users.getUserDetails(id: user.id) { (response) in
+        apiManager.getUserDetails(id: user.id) { (response) in
             defer { self.isLoading.value = false }
             switch response {
             case .failure(let error):
