@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import SVPullToRefresh
 
 final class DetailsViewController: UIViewController {
 
@@ -21,6 +22,7 @@ final class DetailsViewController: UIViewController {
     
     var viewModel: DetailsViewModel!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,10 +36,18 @@ final class DetailsViewController: UIViewController {
 private extension DetailsViewController {
     func setupUI() {
         setupNavigationBar()
+        setupPullToRefresh()
     }
     
     func setupNavigationBar() {
         title = viewModel.title
+    }
+    
+    func setupPullToRefresh() {
+        scrollView.addPullToRefresh { [weak self] in
+            guard let self = self else { return }
+            self.getData()
+        }
     }
     
     func bindData() {
@@ -47,6 +57,7 @@ private extension DetailsViewController {
                 MBProgressHUD.showAdded(to: self.view, animated: true)
             } else {
                 MBProgressHUD.hide(for: self.view, animated: true)
+                self.scrollView.pullToRefreshView.stopAnimating()
             }
         }
     }
