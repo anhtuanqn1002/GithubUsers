@@ -39,10 +39,11 @@ private extension UsersViewController {
     
     func setupTableView() {
         tableView.register(UINib(nibName: UsersTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: UsersTableViewCell.reuseIdentifier)
+        tableView.tableFooterView = UIView()
     }
     
     func bindData() {
-        viewModel.isLoading.bind { [weak self] isLoading in
+        viewModel.isLoading.bindAndFire { [weak self] isLoading in
             guard let self = self else { return }
             if isLoading {
                 MBProgressHUD.showAdded(to: self.view, animated: true)

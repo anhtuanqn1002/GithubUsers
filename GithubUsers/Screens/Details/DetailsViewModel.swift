@@ -9,6 +9,8 @@
 import Foundation
 
 final class DetailsViewModel {
+
+    let isLoading: Variable<Bool> = Variable(false)
     
     private var user: User!
 
@@ -52,7 +54,9 @@ final class DetailsViewModel {
 // MARK: - Request data
 extension DetailsViewModel {
     func getUserDetails(completion: (() -> Void)? = nil) {
+        isLoading.value = true
         APIManager.Users.getUserDetails(id: user.id) { (response) in
+            defer { self.isLoading.value = false }
             switch response {
             case .failure(let error):
                 Log(error)

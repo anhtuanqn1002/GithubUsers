@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 final class DetailsViewController: UIViewController {
 
@@ -24,6 +25,7 @@ final class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        bindData()
         getData()
     }
 }
@@ -36,6 +38,17 @@ private extension DetailsViewController {
     
     func setupNavigationBar() {
         title = viewModel.title
+    }
+    
+    func bindData() {
+        viewModel.isLoading.bindAndFire { [weak self] isLoading in
+            guard let self = self else { return }
+            if isLoading {
+                MBProgressHUD.showAdded(to: self.view, animated: true)
+            } else {
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+        }
     }
     
     func getData() {
