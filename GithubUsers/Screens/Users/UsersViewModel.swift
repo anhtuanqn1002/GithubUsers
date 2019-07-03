@@ -20,6 +20,7 @@ final class UsersViewModel {
         return cellViewModels.count
     }
     
+    private var users: [User] = []
     private var cellViewModels: [UsersCellViewModel] = []
 }
 
@@ -33,6 +34,7 @@ extension UsersViewModel {
                 Log(error)
                 completion?()
             case .success(let users):
+                self.users = users
                 self.cellViewModels = users.map { UsersCellViewModel(model: $0) }
                 completion?()
             }
@@ -42,5 +44,10 @@ extension UsersViewModel {
     func cellViewModelAt(_ index: Int) -> UsersCellViewModel? {
         guard 0..<numberOfCell ~= index else { return nil }
         return cellViewModels[index]
+    }
+    
+    func createDetailsViewModel(_ index: Int) -> DetailsViewModel? {
+        guard 0..<numberOfCell ~= index else { return nil }
+        return DetailsViewModel(user: users[index])
     }
 }

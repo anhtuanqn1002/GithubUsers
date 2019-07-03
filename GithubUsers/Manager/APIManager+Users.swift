@@ -32,5 +32,31 @@ extension APIManager {
                 }
             }
         }
+        
+        static func getUserDetails(id: String, completion: @escaping (Swift.Result<User, NSError>) -> Void) {
+            let path = String(format: Constants.StringURL.details, id)
+            let url = APIManager.endpoint(path: path)
+            APIManager.request(method: .get, url: url, params: [:]) { (response) in
+                switch response.result {
+                case .failure(let error):
+                    if error.code == -1009 {
+                        if let user = User.find(id: id) {
+                            completion(.success(user))
+                        } else {
+                            completion(.failure(NSError(domain: "GithubUsers", code: 99, userInfo: nil)))
+                        }
+                    } else {
+                        completion(.failure(error))
+                    }
+                case .success(let json):
+                    guard let id = User.createOrUpdate(json: json),
+                        let user = User.find(id: id) else {
+                        completion(.failure(NSError(domain: "GithubUsers", code: 99, userInfo: nil)))
+                        return
+                    }
+                    completion(.success(user))
+                }
+            }
+        }
     }
 }

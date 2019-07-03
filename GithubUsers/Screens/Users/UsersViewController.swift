@@ -66,6 +66,14 @@ private extension UsersViewController {
             self.tableView.reloadData()
         }
     }
+    
+    func showDetailsAt(_ indexPath: IndexPath) {
+        guard let detailsViewController = DetailsViewController.instantiateFromStoryboard(),
+            let detailsViewModel = viewModel.createDetailsViewModel(indexPath.row)
+            else { return }
+        detailsViewController.viewModel = detailsViewModel
+        navigationController?.pushViewController(detailsViewController, animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -85,5 +93,10 @@ extension UsersViewController: UITableViewDataSource {
 extension UsersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        showDetailsAt(indexPath)
     }
 }

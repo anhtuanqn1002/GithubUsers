@@ -14,5 +14,6 @@ extension Constants {
     enum StringURL {
         static let root = "https://api.github.com"
         static let user = "/users"
+        static let details = "/users/%@"
     }
 }
