@@ -22,12 +22,12 @@ class TestDetailsViewModel: XCTestCase {
     func testFollowingNumberIsTrue() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let expectation = XCTestExpectation(description: "userViewModel")
+        let expectation = XCTestExpectation(description: "detailsViewModel")
         let user = User()
         let viewModel = DetailsViewModel(user: user, apiManager: MockUserAPI())
         viewModel.getUserDetails {
-            XCTAssertEqual(viewModel.followers, "10", "Followers number must be 10")
-            XCTAssertEqual(viewModel.following, "22", "Following number must be 22")
+            XCTAssertEqual(viewModel.followers.value, "10", "Followers number must be 10")
+            XCTAssertEqual(viewModel.following.value, "22", "Following number must be 22")
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: timeoutInterval)
