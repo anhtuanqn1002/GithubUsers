@@ -30,7 +30,7 @@ enum DummyTestConstants2 {
     static let testFlag = true
 }
 
-enum DummyTestConstants {
+enum DummyTestConstants6 {
     static let testValue = "TestValue"
     static let testNumber = 42
     static let testFlag = true
