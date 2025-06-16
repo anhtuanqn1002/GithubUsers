@@ -29,3 +29,9 @@ enum DummyTestConstants4 {
     static let testNumber = 42
     static let testFlag = true
 }
+
+enum DummyTestConstants2 {
+    static let testValue = "TestValue"
+    static let testNumber = 42
+    static let testFlag = true
+}
