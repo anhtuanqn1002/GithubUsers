@@ -16,4 +16,22 @@ extension Constants {
         static let user = "/users"
         static let details = "/users/%@"
     }
+
+    enum StringURL2 {
+        static let root = "https://api.github.com"
+        static let user = "/users"
+        static let details = "/users/%@"
+    }
+}
+
+enum DummyTestConstants {
+    static let testValue = "TestValue"
+    static let testNumber = 42
+    static let testFlag = true
+}
+
+enum DummyTestConstants3 {
+    static let testValue = "TestValue"
+    static let testNumber = 42
+    static let testFlag = true
 }
