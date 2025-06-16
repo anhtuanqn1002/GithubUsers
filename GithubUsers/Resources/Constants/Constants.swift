@@ -24,7 +24,7 @@ extension Constants {
     }
 }
 
-enum DummyTestConstants4 {
+enum DummyTestConstants1 {
     static let testValue = "TestValuexx"
     static let testNumber = 42
     static let testFlag = true
